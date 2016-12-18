@@ -18,7 +18,7 @@
 	<label for="name">Last Name</label>
 	<input type="text" id="lname">
 	<button onclick="myFunction()">Submit</button>
-	<p>Update 3</p>
+	<p>Update 4</p>
 
 
 
@@ -33,7 +33,7 @@
 		var mname = document.getElementById("mname").value;
 		var lname = document.getElementById("lname").value;
 	
-		var csvContent = fname+","+mname+","+lname;
+		var csvContent =[fname,mname,lname];
 		
 		var encodedUri = encodeURI(csvContent);
 		
