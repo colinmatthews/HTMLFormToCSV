@@ -33,14 +33,14 @@
 		var mname = document.getElementById("mname").value;
 		var lname = document.getElementById("lname").value;
 	
-		//var csvContent = [fname,mname,lname];
+		var csvContent = fname+","+mname+","+lname;
 		
-		//var encodedUri = encodeURI(csvContent);
+		var encodedUri = encodeURI(csvContent);
 		
-		//console.log(encodedUri);
+		console.log(encodedUri);
 		
-		var link = fname + "," + mname + "," + fname;
-		link.setAttribute("href", encodedUri);
+		var link = document.createElement("a");
+		link.setAttribute("href", csvContent);
 		link.setAttribute("download", "my_data.csv");
 		document.body.appendChild(link); // Required for FF
 
