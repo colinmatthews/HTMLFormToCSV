@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<label for="name">First Name</label>
+	<input type="text" id="fname">
+
+	</br>
+	</br>
+	</br>
+
+	<label for="name">Middle Name</label>
+	<input type="text" id="mname">
+
+	</br>
+	</br>
+	</br>
+
+	<label for="name">Last Name</label>
+	<input type="text" id="lname">
+	<button onclick="myFunction()">Submit</button>
+	<p>Update 4</p>
+
+
+
+</body>
+<script>
+	
+	
+
+	function myFunction(){
+	
+		var fname = document.getElementById("fname").value;
+		var mname = document.getElementById("mname").value;
+		var lname = document.getElementById("lname").value;
+	
+		var csvContent =[fname,mname,lname];
+		
+		var encodedUri = encodeURI(csvContent);
+		
+		console.log(encodedUri);
+		
+		var link = document.createElement("a");
+		link.href = 'data:attachment/csv,' + encodedUri;
+		link.target ='_blank';
+		link.download ="my_data.csv";
+		document.body.appendChild(link); // Required for FF
+
+		link.click(); // This will download the data file named "my_data.csv".
+	}
+	
+</script>
+
+
+</html>
